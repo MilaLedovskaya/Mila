@@ -1,0 +1,396 @@
+from time import*
+from random import*
+import os
+from colorama import Fore, Back, Style, init
+init()
+seed(clock())
+symka=['','','','','','','','','','']
+sila=0
+intelect=0
+lovkost=0
+vynoslivost=0
+udacha=0
+opyt=0
+zisni=0
+mesto=0
+s=0
+i=0
+l=0
+v=0
+u=0
+o=0
+z=0
+m=0
+def svoystva():
+	print(Fore.GREEN+"sila:        "+Style.RESET_ALL, sila, ' ', Fore.YELLOW+str(s)+Style.RESET_ALL)
+	print(Fore.GREEN+"intelect:    "+Style.RESET_ALL, intelect,' ',Fore.YELLOW+str(i)+Style.RESET_ALL )
+	print(Fore.GREEN+"lovkost:     "+Style.RESET_ALL, lovkost,' ', Fore.YELLOW+str(l)+Style.RESET_ALL)
+	print(Fore.GREEN+"vynoslivost: "+Style.RESET_ALL, vynoslivost,' ', Fore.YELLOW+str(v)+Style.RESET_ALL)
+	print(Fore.GREEN+"udacha:      "+Style.RESET_ALL, udacha,' ', Fore.YELLOW+str(u)+Style.RESET_ALL)
+	print(Fore.GREEN+"opyt:        "+Style.RESET_ALL, opyt,' ', Fore.YELLOW+str(o)+Style.RESET_ALL)
+	print(Fore.GREEN+"zisni:       "+Style.RESET_ALL, zisni,' ', Fore.YELLOW+str(z)+Style.RESET_ALL)
+	print(Fore.GREEN+"mesto:       "+Style.RESET_ALL, mesto,' ', Fore.YELLOW+str(m)+Style.RESET_ALL)
+you=input()
+life=1
+print("Mark, Jane or your name")
+if you=="Mark":
+	os.system("cls")
+	print(" ")
+	print("You are Mark!")
+	print(" ")
+	sila=40
+	intelect=0
+	lovkost=60
+	vynoslivost=50
+	udacha=60
+	opyt=0
+	zisni=10
+	mesto=10
+elif you=="Jane":
+	os.system("cls")
+	print(" ")
+	print("You are Jane!")
+	print(" ")
+	sila=50
+	intelect=0
+	lovkost=50
+	vynoslivost=30
+	udacha=60
+	opyt=0
+	zisni=10
+	mesto=12
+else:
+	os.system("cls")
+	print(" ")
+	print("You are ", you, "!")
+	print(" ")
+	sila=50
+	intelect=0
+	lovkost=50
+	vynoslivost=50
+	udacha=50
+	opyt=0
+	zisni=10
+	mesto=8
+zisnigul=100
+zisnibeatle=80
+i=0
+while 1:
+	svoystva()
+	a=randrange(9)
+	if a==0:
+		print(" ")
+		print(Fore.RED+"You are seeing the strange dark house"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - obyskat \n2 - uyti \n3 - vyiti\n"))
+		if q==1:
+			sila=sila
+			intelect+=10
+			lovkost=lovkost
+			vynoslivost=vynoslivost
+			udacha+=10
+			opyt+=20
+			zisni=zisni
+			mesto=mesto
+			s=0
+			i=10
+			l=0
+			v=0
+			u=10
+			o=20
+			z=0
+			m=0
+		if q==3:
+			break
+	if a==1:
+		print(" ")
+		print(Fore.RED+"You have found a note"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - vziat \n2 - uyti \n3 - vyiti \n4 - prochitat\n"))
+		if q==1:
+			sila=sila
+			intelect=intelect
+			lovkost=lovkost	
+			vynoslivost=vynoslivost
+			udacha+=10
+			opyt+=10
+			zisni+=10
+			mesto-=1
+			s=0
+			i=0
+			l=0
+			v=0
+			u=10
+			o=10
+			z=10
+			m=(-1)
+		if q==4:
+			sila=sila
+			intelect+=30
+			lovkost=lovkost
+			vynoslivost=vynoslivost
+			udacha+=10
+			opyt+=10
+			zisni=zisni
+			mesto=mesto
+			s=0
+			i=30
+			l=0
+			v=0
+			u=10
+			o=10
+			z=0
+			m=0
+		if q==3:
+			break
+	if a==2:
+		print(" ")
+		print(Fore.RED+"You have found some food"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - syest \n2 - uyti \n3 - vyiti\n"))
+		if q==4:
+			sila+=10
+			intelect+=30
+			lovkost=lovkost
+			vynoslivost=vynoslivost
+			udacha+=10
+			opyt+=10
+			zisni+=4
+			mesto=mesto
+			s=10
+			i=30
+			l=0
+			v=0
+			u=10
+			o=10
+			z=4
+			m=0
+		if q==3:
+			break
+	if a==3:
+		print(" ")
+		print(Fore.RED+"You met beatle"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - ubit \n2 - ubezat \n3 - vyiti\n" ))
+		if q==1:
+			zisnibeatle+=20
+			while 1:
+				print(" ")
+				print("Beatle thoght you")
+				print(" ")
+				zisnibeatle1=zisnibeatle
+				zisni-=zisnibeatle1*3//100
+				print("You thoght Beatle")
+				print(" ")
+				zisnibeatle-=(sila+udacha//150)
+				print("zisnibeatle: ", zisnibeatle1)
+				print("zisni: ",zisni)
+				if zisni==1 :
+					print(" ")
+					print("Pass")
+					print(" ")
+					break
+				if zisnibeatle<=0:
+					sila-=20
+					intelect+=intelect*udacha//100
+					lovkost+=20
+					vynoslivost-=10
+					udacha+=udacha//100+sila
+					opyt+=40
+					zisni=zisni
+					s=(-20)
+					i=intelect*udacha//100
+					l=20
+					v=(-10)
+					u=udacha//100+sila
+					o=40
+					z=0
+					m=0
+					print(" ")
+					print("You won!")
+					print(" ")
+					break
+				elif zisni<=0:
+					life=0
+					break
+		if q==3:
+			break
+	if a==4:
+		print(" ")
+		print(Fore.RED+"You met Gul"+Style.RESET_ALL)
+		print(" ")
+		
+		if q==1:
+			zisnigul+=20
+			while 1:
+				print(" ")
+				print("Gul thoght you")
+				zisnigul1=zisnigul
+				zisni-=zisnigul1*3//100
+				print(" ")
+				print("You thoght Gul")
+				print(" ")
+				zisnigul-=(sila+udacha//100)
+				print("zisnigul: ", zisnigul1)
+				print("zisni: ",zisni)
+				if zisni==1:
+					print(" ")
+					print("Pass")
+					print(" ")
+					break
+				elif zisnigul<=0:
+					sila-=30
+					intelect+=intelect*udacha//100
+					lovkost+=30
+					vynoslivost-=10
+					udacha+=udacha//100+sila
+					opyt+=50
+					zisni=zisni
+					s=(-30)
+					i=intelect*udacha//100
+					l=30
+					v=(-10)
+					u=udacha//100+sila
+					o=50
+					z=0
+					m=0
+					print(" ")
+					print("You won!")
+					print(" ")
+					break
+				elif zisni<=0:
+					life=0
+					break
+		if q==3:
+			break
+	if a==5:
+		print (Fore.RED+"You came to a coutry!"+Style.RESET_ALL )
+		q=int(input("1 - Spat \n2 - uyti \n3 - vyiti\n"))
+		if q==1:
+			sila+=10
+			intelect=intelect
+			lovkost=lovkost
+			vynoslivost+=10
+			udacha=udacha
+			opyt+=10
+			zisni+=5
+			mesto=mesto
+			s=10
+			i=0
+			l=0
+			v=10
+			u=0
+			o=10
+			z=5
+			m=0
+		if q==3:
+			break
+	if a==6:
+		print(" ")
+		print(Fore.RED+"You found a pistolet"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - vziat \n2 - uyti \n3 - vyiti \n"))
+		if q==1:
+			if '' in symka:
+				cnt = 0
+				for x in symka:
+					if x=='':
+						if 'pistolet' in symka:
+							print("You have already pistolet!")
+							break
+						else:
+							symka[cnt]='pistolet'
+							print("Now you have pistolet")
+							sila+=40
+							intelect=intelect
+							lovkost=lovkost
+							vynoslivost=vynoslivost
+							udacha+=udacha//4
+							opyt+=20
+							zisni=zisni
+							mesto-=1
+							s=40
+							i=0
+							l=0
+							v=0
+							u=udacha//4
+							o=20
+							z=0
+							m=(-1)
+							break
+					cnt+=1
+			else:
+				print("You haven't got mesto to take pistolet")
+				print(" ")
+		if q==3:
+			break
+	if a==7:
+		print(" ")
+		print(Fore.RED+"You found a bronia"+Style.RESET_ALL)
+		print(" ")
+		q=int(input("1 - vziat \n2 - uyti \n3 - vyiti \n"))
+		if q==1:
+			if '' in symka:
+				cnt = 0
+				for x in symka:
+					if x=='':
+						if 'bronia' in symka:
+							print("You have already bronia!")
+							break
+						else:
+							symka[cnt]='bronia'
+							print("Now you have bronia")
+							sila+=10
+							intelect=intelect
+							lovkost+=10
+							vynoslivost=vynoslivost
+							udacha+=udacha
+							opyt+=30
+							zisni=zisni
+							mesto-=1
+							s=10
+							i=0
+							l=10
+							v=0
+							u=0
+							o=30
+							z=0
+							m=(-1)
+							break
+					cnt+=1
+			else:
+				print("You haven't got mesto to take bronia")
+				print(" ")
+		if q==3:
+			break
+	if a==8:
+		print(" ")
+		print(Fore.RED+"You met strage person. He told you his story. You are on right way!"+Style.RESET_ALL)
+		print(" ")
+		sila=sila
+		intelect+=30
+		lovkost=lovkost
+		vynoslivost=vynoslivost
+		udacha+=udacha*2
+		opyt+=50
+		zisni=zisni
+		mesto-=1
+		s=0
+		i=30
+		l=0
+		v=0
+		u=udacha*2
+		o=50
+		z=0
+		m=(-1)
+	if sila<0:
+		sila=0
+	if not life:
+		break
+#os.system("cls")
+opyt=opyt
+uroven=opyt*intelect//1000
+svoystva()
+print(" ")
+print("uroven", uroven)
+print("Game over")
